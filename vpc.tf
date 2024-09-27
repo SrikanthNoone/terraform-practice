@@ -46,6 +46,7 @@ resource "aws_instance" "public-instance" {
     instance_type = "t2.micro"
     key_name = "aws"
     subnet_id = aws_subnet.public-subnet.id
+    vpc_security_group_ids = [aws_security_group.ssh_access.id]
     tags = {
       Name = "sample-terraform"
     }
