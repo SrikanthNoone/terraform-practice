@@ -57,7 +57,7 @@ resource "aws_instance" "public-instance" {
         sudo apt-get install nginx -y
         sudo systemctl start nginx
         sudo systemctl enable nginx
-        echo "<html><body><h1>Welcome to my website!</h1></body></html>" > /var/www/html/index.html
+        echo "<html><body><h1>Welcome to my website!</h1></body></html>" > /var/www/html/index.nginx-debian.html
         sudo systemctl restart nginx
     EOF
 }
