@@ -23,8 +23,7 @@ resource "aws_subnet" "private-subnet" {
 }
 resource "aws_internet_gateway" "internet-gateway-vpc" {
     vpc_id = aws_vpc.new-vpc.id
-    tags = 
-        {
+    tags = {
     Name = "igw-vpc"
     }
   
