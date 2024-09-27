@@ -44,6 +44,6 @@ resource "aws_route_table_association" "public_route_table_association" {
 resource "aws_instance" "public-instance" {
     ami = "ami-0e86e20dae9224db8"
     instance_type = "t2.micro"
-    key_name = "aws.pem"
+    key_name = "aws"
     subnet_id = aws_subnet.public-subnet.id
 }
