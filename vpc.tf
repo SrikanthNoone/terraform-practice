@@ -47,6 +47,7 @@ resource "aws_instance" "public-instance" {
     key_name = "aws"
     subnet_id = aws_subnet.public-subnet.id
     vpc_security_group_ids = [aws_security_group.ssh_access.id]
+    associate_public_ip_address = true
     tags = {
       Name = "sample-terraform"
     }
