@@ -46,4 +46,7 @@ resource "aws_instance" "public-instance" {
     instance_type = "t2.micro"
     key_name = "aws"
     subnet_id = aws_subnet.public-subnet.id
+    tags = {
+      Name = "sample-terraform"
+    }
 }
