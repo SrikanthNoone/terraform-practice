@@ -34,6 +34,6 @@ resource "aws_route_table" "public_route_table" {
         gateway_id = aws_internet_gateway.internet-gateway-vpc.id
     }
   tags = {
-    Name = "publuc_route_table"
+    Name = "public_route_table"
   }
 }
