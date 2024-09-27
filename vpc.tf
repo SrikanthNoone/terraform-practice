@@ -50,3 +50,19 @@ resource "aws_instance" "public-instance" {
       Name = "sample-terraform"
     }
 }
+resource "aws_security_group" "ssh_access" {
+  name_prefix = "ssh_access"
+  vpc_id      =  aws_vpc.new-vpc.id
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
